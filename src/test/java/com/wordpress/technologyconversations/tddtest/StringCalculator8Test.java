@@ -6,6 +6,17 @@ import junit.framework.Assert;
 import org.junit.Test;
 
 public class StringCalculator8Test {
+
+	@Test
+	public final void when2NumbersAreUsedThenNoExceptionIsThrown() {
+		StringCalculator8.add("1,2");
+		Assert.assertTrue(true);
+	}
+
+	@Test(expected = RuntimeException.class)
+	public final void whenNonNumberIsUsedThenExceptionIsThrown() {
+		StringCalculator8.add("1,X");
+	}
 	
 	@Test
 	public final void whenEmptyStringIsUsedThenReturnValueIs0() {
@@ -56,7 +67,7 @@ public class StringCalculator8Test {
 
 	@Test
 	public final void whenOneOrMoreNumbersAreGreaterThan1000IsUsedThenItIsNotIncludedInSum() {
-		Assert.assertEquals(3+6, StringCalculator8.add("3,1001,6,1234"));
+		Assert.assertEquals(3+1000+6, StringCalculator8.add("3,1000,1001,6,1234"));
 	}
 
 }

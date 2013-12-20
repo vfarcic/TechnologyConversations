@@ -14,6 +14,17 @@ public class StringCalculator3Test {
 	}
 	
 	@Test
+	public final void when2NumbersAreUsedThenNoExceptionIsThrown() {
+		StringCalculator3.add("1,2");
+		Assert.assertTrue(true);
+	}
+
+	@Test(expected = RuntimeException.class)
+	public final void whenNonNumberIsUsedThenExceptionIsThrown() {
+		StringCalculator3.add("1,X");
+	}
+
+	@Test
 	public final void whenEmptyStringIsUsedThenReturnValueIs0() {
 		Assert.assertEquals(0, StringCalculator3.add(""));
 	}

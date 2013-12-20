@@ -9,6 +9,17 @@ import com.wordpress.technologyconversations.tdd.StringCalculator7;
 public class StringCalculator7Test {
 	
 	@Test
+	public final void when2NumbersAreUsedThenNoExceptionIsThrown() {
+		StringCalculator7.add("1,2");
+		Assert.assertTrue(true);
+	}
+
+	@Test(expected = RuntimeException.class)
+	public final void whenNonNumberIsUsedThenExceptionIsThrown() {
+		StringCalculator7.add("1,X");
+	}
+	
+	@Test
 	public final void whenEmptyStringIsUsedThenReturnValueIs0() {
 		Assert.assertEquals(0, StringCalculator7.add(""));
 	}

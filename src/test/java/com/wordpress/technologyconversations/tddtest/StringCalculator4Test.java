@@ -8,11 +8,21 @@ import com.wordpress.technologyconversations.tdd.StringCalculator4;
 
 public class StringCalculator4Test {
 	
-	// Removed after exception
 //	@Test(expected = RuntimeException.class)
 //	public final void whenMoreThan2NumbersAreUsedThenExceptionIsThrown() {
 //		StringCalculator4.add("1,2,3");
 //	}
+	
+	@Test
+	public final void when2NumbersAreUsedThenNoExceptionIsThrown() {
+		StringCalculator4.add("1,2");
+		Assert.assertTrue(true);
+	}
+
+	@Test(expected = RuntimeException.class)
+	public final void whenNonNumberIsUsedThenExceptionIsThrown() {
+		StringCalculator4.add("1,X");
+	}
 	
 	@Test
 	public final void whenEmptyStringIsUsedThenReturnValueIs0() {
