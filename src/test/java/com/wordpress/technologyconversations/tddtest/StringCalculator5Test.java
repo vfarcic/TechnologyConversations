@@ -30,7 +30,7 @@ public class StringCalculator5Test {
 
 	@Test
 	public final void whenNewLineIsUsedBetweenNumbersThenReturnValuesAreTheirSums() {
-		Assert.assertEquals(3+6+15, StringCalculator5.add("3,6\n,15"));
+		Assert.assertEquals(3+6+15, StringCalculator5.add("3,6\n15"));
 	}
 
 }

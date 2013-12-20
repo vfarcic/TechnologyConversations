@@ -5,11 +5,8 @@ import java.util.List;
 
 public class StringCalculator8 {
 	
-	public static final int add(final String numbers) {
-		if (numbers.trim().isEmpty()) {
-			return 0;
-		}
-		String delimiter = ",";
+	public static int add(final String numbers) {
+		String delimiter = ",|\n";
 		String numbersWithoutDelimiter = numbers;
 		if (numbers.startsWith("//")) {
 			int delimiterIndex = numbers.indexOf("//") + 2;
@@ -19,7 +16,7 @@ public class StringCalculator8 {
 		return add(numbersWithoutDelimiter, delimiter);
 	}
 	
-	private static final int add(final String numbers, final String delimiter) {
+	private static int add(final String numbers, final String delimiter) {
 		int returnValue = 0;
 		String[] numbersArray = numbers.split(delimiter);
 		List<Integer> negativeNumbers = new ArrayList<Integer>();
@@ -28,10 +25,9 @@ public class StringCalculator8 {
 				int numberInt = Integer.parseInt(number.trim());
 				if (numberInt < 0) {
 					negativeNumbers.add(numberInt);
+				} else if (numberInt <= 1000) {
+					returnValue += numberInt;
 				}
-				returnValue += numberInt;
-			} else {
-				throw new RuntimeException("Empty number is not allowed");
 			}
 		}
 		if (negativeNumbers.size() > 0) {

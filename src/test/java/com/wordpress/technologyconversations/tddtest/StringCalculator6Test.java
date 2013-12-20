@@ -30,12 +30,12 @@ public class StringCalculator6Test {
 
 	@Test
 	public final void whenNewLineIsUsedBetweenNumbersThenReturnValuesAreTheirSums() {
-		Assert.assertEquals(3+6+15, StringCalculator6.add("3,6\n,15"));
+		Assert.assertEquals(3+6+15, StringCalculator6.add("3,6\n15"));
 	}
 
-	@Test(expected = RuntimeException.class)
-	public final void whenOneOfNumbersIsEmptyStringThenExceptionIsThrown() {
-		StringCalculator6.add("3,\n,15");
+	@Test
+	public final void whenDelimiterIsSpecifiedThenItIsUsedToSeparateNumbers() {
+		Assert.assertEquals(3+6+15, StringCalculator6.add("//;\n3;6;15"));
 	}
 
 }

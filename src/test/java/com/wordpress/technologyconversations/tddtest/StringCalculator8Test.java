@@ -1,10 +1,9 @@
 package com.wordpress.technologyconversations.tddtest;
 
+import com.wordpress.technologyconversations.tdd.StringCalculator8;
 import junit.framework.Assert;
 
 import org.junit.Test;
-
-import com.wordpress.technologyconversations.tdd.StringCalculator8;
 
 public class StringCalculator8Test {
 	
@@ -30,12 +29,7 @@ public class StringCalculator8Test {
 
 	@Test
 	public final void whenNewLineIsUsedBetweenNumbersThenReturnValuesAreTheirSums() {
-		Assert.assertEquals(3+6+15, StringCalculator8.add("3,6\n,15"));
-	}
-
-	@Test(expected = RuntimeException.class)
-	public final void whenOneOfNumbersIsEmptyStringThenExceptionIsThrown() {
-		StringCalculator8.add("3,\n,15");
+		Assert.assertEquals(3+6+15, StringCalculator8.add("3,6\n15"));
 	}
 
 	@Test
@@ -58,6 +52,11 @@ public class StringCalculator8Test {
 		}
 		Assert.assertNotNull(exception);
 		Assert.assertEquals("Negatives not allowed: [-6, -18]", exception.getMessage());
+	}
+
+	@Test
+	public final void whenOneOrMoreNumbersAreGreaterThan1000IsUsedThenItIsNotIncludedInSum() {
+		Assert.assertEquals(3+6, StringCalculator8.add("3,1001,6,1234"));
 	}
 
 }

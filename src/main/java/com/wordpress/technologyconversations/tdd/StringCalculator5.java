@@ -2,9 +2,9 @@ package com.wordpress.technologyconversations.tdd;
 
 public class StringCalculator5 {
 	
-	public static final int add(final String numbers) {
+	public static int add(final String numbers) {
 		int returnValue = 0;
-		String[] numbersArray = numbers.split(",");
+		String[] numbersArray = numbers.split(",|\n"); // Added |\n to the split regex
 		for (String number : numbersArray) {
 			if (!number.trim().isEmpty()) {
 				returnValue += Integer.parseInt(number.trim());
