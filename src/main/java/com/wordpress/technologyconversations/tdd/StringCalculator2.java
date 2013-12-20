@@ -9,7 +9,7 @@ public class StringCalculator2 {
 		} else {
 			for (String number : numbersArray) {
 				if (!number.isEmpty()) {
-					Integer.parseInt(number); // If it is not a number, parseInt will throw an exception
+					Integer.parseInt(number);
 				}
 			}
 		}
