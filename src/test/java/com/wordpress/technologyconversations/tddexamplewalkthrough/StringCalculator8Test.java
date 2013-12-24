@@ -1,6 +1,5 @@
-package com.wordpress.technologyconversations.tddtest;
+package com.wordpress.technologyconversations.tddexamplewalkthrough;
 
-import com.wordpress.technologyconversations.tdd.StringCalculator8;
 import junit.framework.Assert;
 
 import org.junit.Test;

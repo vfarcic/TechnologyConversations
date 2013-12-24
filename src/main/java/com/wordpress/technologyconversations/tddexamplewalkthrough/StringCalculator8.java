@@ -1,4 +1,4 @@
-package com.wordpress.technologyconversations.tdd;
+package com.wordpress.technologyconversations.tddexamplewalkthrough;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -1,8 +1,8 @@
-package com.wordpress.technologyconversations.tdd;
+package com.wordpress.technologyconversations.tddexamplewalkthrough;
 
 public class StringCalculator2 {
 	
-	public static final int add(final String numbers) { // Changed void to int
+	public static int add(final String numbers) { // Changed void to int
 		String[] numbersArray = numbers.split(",");
 		if (numbersArray.length > 2) {
 			throw new RuntimeException("Up to 2 numbers separated by comma (,) are allowed");

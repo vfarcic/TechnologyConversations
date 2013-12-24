@@ -1,4 +1,4 @@
-package com.wordpress.technologyconversations.tdd;
+package com.wordpress.technologyconversations.tddexamplewalkthrough;
 
 public class StringCalculator5 {
 	
