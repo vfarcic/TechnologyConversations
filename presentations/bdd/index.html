@@ -1,0 +1,203 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>Behavior Driven Development (BDD): Value Through Collaboration</title>
+
+		<meta name="author" content="Viktor Farcic">
+
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/default.css" id="theme">
+
+		<!-- For syntax highlighting -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- If the query includes 'print-pdf', use the PDF print sheet -->
+		<script>
+			document.write( '<link rel="stylesheet" href="css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+
+				<section id="cover">
+					<h1>Behavior Driven Development (BDD)</h1>
+					<h3>Value Through Collaboration</h3>
+					<p>
+						<small>
+                            Created by <a href="http://technologyconversations.wordpress.com/about/">Viktor Farcic</a>
+                            for <a href="http://technologyconversations.wordpress.com">Technology Conversations</a> / <a href="http://twitter.com/vfarcic">@vfarcic</a></small>
+					</p>
+				</section>
+
+                <section id="intro">
+					<h2>Introduction</h2>
+					<p>
+                        <ul>
+                            <li class="fragment">Agile process</li>
+                            <li class="fragment">Stakeholder value</li>
+                            <li class="fragment">Unique set of artifacts</li>
+                            <li class="fragment">TDD with clarity</li>
+                            <li class="fragment">Natural language</li>
+                        </ul>
+					</p>
+                </section>
+                <section>
+                    <h2>BDD Story</h2>
+                    <p>
+                        <ul>
+                            <li>Narrative</li>
+                            <li>One or more scenarios</li>
+                        </ul>
+                    </p>
+                </section>
+				<!-- Example of nested vertical slides -->
+				<section id="narrativeExample">
+                    <h2>BDD Narrative</h2>
+                    <p>
+                        <pre><code contenteditable>
+                            Narrative:<br />
+                            In Order to [benefit]<br />
+                            As a [role]<br />
+                            I Want to [feature]<br />
+                        </code></pre>
+                    </p>
+				</section>
+                <section id="narrative">
+                    <h2>BDD Narrative</h2>
+                    <p>
+                        <ul>
+                            <li class="fragment">NOT requirement statements</li>
+                            <li class="fragment">Everyone can write them</li>
+                            <li class="fragment">
+                                INVEST
+                                <ul>
+                                    <li class="fragment">Independent</li>
+                                    <li class="fragment">Negotiable</li>
+                                    <li class="fragment">Valuable</li>
+                                    <li class="fragment">Estimable</li>
+                                    <li class="fragment">Small</li>
+                                    <li class="fragment">Testable</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </p>
+                </section>
+                <section id="scenario">
+                    <h2>BDD Scenario</h2>
+                    <p>
+                        <pre><code contenteditable>
+                            Scenario: [description]<br />
+                            Given [context or precondition]<br />
+                            When [event or action]<br />
+                            Then [outcome validation]<br />
+                        </code></pre>
+                    </p>
+                </section>
+				<section id="process">
+					<h2>Process</h2>
+					<p>
+                        <ul>
+                            <li>Write and discuss narrative</li>
+                            <li>Write and discuss short descriptions of scenarios</li>
+                            <li>Write steps for each scenario</li>
+                            <li>Repeat steps 2 and 3 during the development of the narrative</li>
+                        </ul>
+					</p>
+				</section>
+				<section id="automationFrameworks">
+					<h2>Automation Frameworks</h2>
+					<p>
+						<ul>
+                            <li>JBehave (Java)</li>
+                            <li>Cucumber (Ruby / Java)</li>
+                            <li>RSpec (Ruby)</li>
+                            <li>Spec Flow (.Net)</li>
+                        </ul>
+					</p>
+				</section>
+
+				<section id="automationSteps">
+					<h2>Automation Steps</h2>
+					<p>
+						<ul>
+                            <li>Create library of normalized steps</li>
+                            <li>Combine steps into composites</li>
+                            <li>Empower scenarios with examples tables</li>
+                        </ul>
+					</p>
+				</section>
+
+				<section id="normalizedSteps">
+					<h2>Phase #1</h2>
+                    <h3>Create library of normalized steps</h3>
+					<ul>
+						<li>Separate the scenarios from the code</li>
+						<li>Build the steps library</li>
+						<li>Create small atomic steps</li>
+						<li>Standardize steps format</li>
+                        <li>Externalize parameters</li>
+                        <li>Avoid repeated code with aliases</li>
+					</ul>
+				</section>
+				<section id="composites">
+                    <h2>Phase #2</h2>
+					<h3>Combine steps into composites</h3>
+                    <h2>Phase #3</h2>
+                    <h3>Empower scenarios with examples tables</h3>
+				</section>
+                <section id="summary">
+                    <h1>Summary</h1>
+                </section>
+				<section id="theEnd">
+					<h1>THE END</h1>
+					<h3>BY Viktor Farcic / @vfarcic / technologyconversations.wordpress.com</h3>
+				</section>
+			</div>
+
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.min.js"></script>
+
+		<script>
+
+			// Full list of configuration options available here:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+
+				theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+				transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/none
+
+				// Optional libraries used to extend on reveal.js
+				dependencies: [
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/markdown/showdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+					{ src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+				]
+			});
+
+		</script>
+
+	</body>
+</html>
