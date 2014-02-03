@@ -194,25 +194,148 @@
                         </ul>
 					</p>
 				</section>
+                <section>
+                    <section id="normalizedSteps">
+                        <h2>Phase #1</h2>
+                        <h3>Create library of normalized steps</h3>
+                        <ul>
+                            <li>Separate the scenarios from the code</li>
+                            <li>Build the steps library</li>
+                            <li>Create small atomic steps</li>
+                            <li>Standardize steps format</li>
+                            <li>Externalize parameters</li>
+                            <li>Avoid repeated code with aliases</li>
+                        </ul>
+                    </section>
+                    <section id="normalizedStepsSeparateFromCode">
+                        <h2>Phase #1</h2>
+                        <h3>Create library of normalized steps</h3>
+                        <h4>Separate the scenarios from the code</h4>
+                        <pre>Java code:<code contenteditable>@When("user clicks the $id button")
+public final void clickButton(final String id) {
+    // Code that clicks the button with specified ID
+}</code></pre>
+                        <pre>BDD step:
+When user clicks the login button</pre>
+                    </section>
+                    <section id="normalizedStepsLibrary">
+                        <h2>Phase #1</h2>
+                        <h3>Create library of normalized steps</h3>
+                        <h4>Build the steps library</h4>
+                        <pre>CommonSteps - WebSteps        - MyWebSiteSteps
+                              - BackOfficeSteps
+            - DatabaseSteps   - OracleSteps
+                              - MySQLSteps
+                              - DB2Steps
+            - APISteps        - JSONSteps
+                              - WebServiceSteps
+            - OperationsSteps - ShellSteps
+                              - WindowsSteps
+                              - TelnetSteps</pre>
+                    </section>
+                    <section id="normalizedStepsAtomic">
+                        <h2>Phase #1</h2>
+                        <h3>Create library of normalized steps</h3>
+                        <h4>Create small atomic steps</h4>
+                        <pre>BDD story:
+When visitor types john.doe@example.com into the email field
+When visitor types password mysecret into the password field
+When visitor clicks the register button</pre>
+                    </section>
+                    <section id="normalizedStepsFormat">
+                        <h2>Phase #1</h2>
+                        <h3>Create library of normalized steps</h3>
+                        <h4>Standardize steps format</h4>
+                        <pre>BDD story:
+When Web user clicks the $id element
+When Web user clicks the $id link
+When Back office user clicks the $id button</pre>
+                    </section>
+                    <section id="normalizedStepsExternalizeParams">
+                        <h2>Phase #1</h2>
+                        <h3>Create library of normalized steps</h3>
+                        <h4>Externalize parameters</h4>
+                        <pre>BDD story:
+Given Web user is using Firefox browser
+Given Web user opened http://www.google.com
+When Web user types behavior driven development in the search field
+Then the first result is Behavior-driven development - Wikipedia</pre>
+                        <pre>BDD Story:
+Given Web user is using selected browser</pre>
+                    </section>
+                    <section id="normalizedStepsAliases">
+                        <h2>Phase #1</h2>
+                        <h3>Create library of normalized steps</h3>
+                        <h4>Avoid repeated code with aliases</h4>
+                        <pre>Java code<code contenteditable="true">@When("Web user clicks the $id element")
+@Aliases(values={
+    "Web user clicks the $id button",
+    "Web user clicks the $id link"
+}
+public final void clickElement(final String id) {
+    ...
+}</code></pre>
+                    </section>
+                </section>
+                <section>
+                    <section id="composites">
+                        <h2>Phase #2</h2>
+                        <h3>Combine steps into composites</h3>
+                    </section>
+                    <section id="compositesWithout">
+                        <h2>Phase #2</h2>
+                        <h3>Combine steps into composites</h3>
+                        <h4>Without composites</h4>
+                        <pre>BDD story:
+Given user is on the home screen
+When user types john.doe@example.com into the email field
+When user types my_secret into the password field
+When user clicks the login button
+Then confirmation screen is opened</pre>
+                    </section>
+                    <section id="compositesWith">
+                        <h2>Phase #2</h2>
+                        <h3>Combine steps into composites</h3>
+                        <h4>With composites</h4>
+                        <pre>BDD story:
+Given user is logged in</pre>
+                        <pre>Java code:<code contenteditable="true">@Given("user is logged in")
+@Composite(steps = {
+    "Given user is on the home screen",
+    "When user types john.doe@example.com into the email field",
+    "When user types my_secret into the password field",
+    "When user clicks the login button",
+    "Then confirmation screen is opened"
+}</code></pre>
+                    </section>
+                </section>
+                <section>
+                    <section id="examplesTable">
+                        <h2>Phase #3</h2>
+                        <h3>Empower scenarios with examples tables</h3>
+                    </section>
+                    <section id="examplesTableExample">
+                        <h2>Phase #3</h2>
+                        <h3>Empower scenarios with examples tables</h3>
+                        <h4>Example</h4>
+                        <pre>Scenario: Visitors are able to register
 
-				<section id="normalizedSteps">
-					<h2>Phase #1</h2>
-                    <h3>Create library of normalized steps</h3>
-					<ul>
-						<li>Separate the scenarios from the code</li>
-						<li>Build the steps library</li>
-						<li>Create small atomic steps</li>
-						<li>Standardize steps format</li>
-                        <li>Externalize parameters</li>
-                        <li>Avoid repeated code with aliases</li>
-					</ul>
-				</section>
-				<section id="composites">
-                    <h2>Phase #2</h2>
-					<h3>Combine steps into composites</h3>
-                    <h2>Phase #3</h2>
-                    <h3>Empower scenarios with examples tables</h3>
-				</section>
+Given visitor is on the home screen
+Given visitor is NOT logged in
+When visitor clicks the register button
+Then login screen is loaded
+When visitor types email &lt;email&gt;
+When visitor types password &lt;password&gt;
+When visitor clicks the register button
+Then text &lt;text&gt; is displayed
+
+Examples:
+|email                |password |text                            |
+|john.doe@example.com |mysecret |Welcome john.doe@example.com    |
+|john.doe@example.com |secret   |Password is too short           |
+|john.doe             |mysecret |Email is incorrect              |</pre>
+                    </section>
+                </section>
                 <section id="summary">
                     <h1>Summary</h1>
                 </section>
