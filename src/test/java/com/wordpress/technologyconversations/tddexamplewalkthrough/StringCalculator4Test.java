@@ -1,6 +1,6 @@
 package com.wordpress.technologyconversations.tddexamplewalkthrough;
 
-import junit.framework.Assert;
+import org.junit.Assert;
 
 import org.junit.Test;
 
